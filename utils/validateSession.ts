@@ -11,4 +11,5 @@ export const validateSession = async () => {
     if (!user) {
         return redirect("/sign-in");
     }
+    return user;
 }

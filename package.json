@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "types":"npx supabase gen types typescript --project-id zqvysovrwvqfqcftvfff --schema public > database.types.ts"
   },
   "dependencies": {
     "@formkit/drag-and-drop": "^0.2.5",
