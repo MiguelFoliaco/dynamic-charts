@@ -33,6 +33,7 @@ import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Card } from '../charts/components/Cards';
 import { animations } from '@formkit/drag-and-drop';
 import SearchBar from './components/Search';
+import Link from 'next/link';
 // Registro de todos los elementos, controladores, escalas y plugins
 ChartJS.register(
     ArcElement,
@@ -150,9 +151,9 @@ export const Home = () => {
             <div className='flex gap-2 items-center'>
                 <p className='text-1xl font-bold mb-2'>Your Reports</p>
                 <Button
-                    className='py-1.5 px-3 size-2.5 hover:bg-blue'
+                    className='py-1.5 px-3 size-2.5 hover:bg-blue-500'
                 >
-                    <p>Add report</p>
+                    <Link href={'/studio'}>Add report</Link>
                 </Button>
             </div>
             <div>
