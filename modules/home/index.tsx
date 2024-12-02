@@ -84,6 +84,64 @@ export const Home = () => {
             ],
         },
         {
+            type: 'bubble',
+            title: 'Graph type Bubble',
+            labels: ['Label1', 'Label2', 'Label3', 'Label4', 'Label5', 'Label6', 'Label7', 'Label8', 'Label9', 'Label10'],
+            long: 2,
+            datasets: [
+                {
+                    label: 'First Dataset',
+                    data: [
+                        {
+                            x: 20,
+                            y: 30,
+                            r: 10
+                        }, {
+                            x: 40,
+                            y: 10,
+                            r: 5
+                        },
+                        {
+                            x: 30,
+                            y: 20,
+                            r: 15
+                        },
+                        {
+                            x: 50,
+                            y: 40,
+                            r: 5
+                        }
+                    ],
+                    backgroundColor: 'rgb(255, 99, 132)'
+                },
+                {
+                    label: 'Second Dataset',
+                    data: [
+                        {
+                            x: 10,
+                            y: 20,
+                            r: 10
+                        }, {
+                            x: 10,
+                            y: 20,
+                            r: 5
+                        },
+                        {
+                            x: 50,
+                            y: 10,
+                            r: 3
+                        },
+                        {
+                            x: 50,
+                            y: 20,
+                            r: 5
+                        }
+                    ],
+                    backgroundColor: 'rgb(54, 162, 235)'
+                }
+            ]
+        },
+        {
             title: 'Graph type Doughnut',
             type: 'doughnut',
             labels: ['Clients', 'No Clients'],
@@ -138,7 +196,7 @@ export const Home = () => {
                 ],
                 borderWidth: 1
             }]
-        }
+        },
     ];
 
     const [ref, tape] = useDragAndDrop<HTMLDivElement, config>(data, {

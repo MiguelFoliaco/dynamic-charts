@@ -17,7 +17,6 @@ export const uploadCVSAction = async (formData: FormData) => {
             dataParse.push(tempObj)
         }
     })
-    console.log(data)
+
     console.log(dataParse)
-    console.log(data.length)
 }

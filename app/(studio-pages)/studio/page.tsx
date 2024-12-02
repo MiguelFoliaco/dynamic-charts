@@ -21,7 +21,7 @@ const Page = async () => {
                     <Input type="text" required name="name" placeholder='Report name' />
 
                     <Label htmlFor="file" className='my-2 mt-4'>File</Label>
-                    <Input type="text" required name="file" />
+                    <Input type="file" required name="file" />
 
                     <Label htmlFor="delimited" className='my-2 mt-4 flex align-center'>Delimited <p className='ml-2 text-xs text-gray-400'>[default: , t \n]</p></Label>
                     <Input className='mb-5' type="text" placeholder='Delimited' defaultValue={','} required name="delimited" />
