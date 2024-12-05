@@ -23,20 +23,20 @@ export const uploadCVSAction = async (userId: string, formData: FormData,) => {
         }
     })
     const textFile = JSON.stringify(dataParse)
-    const fileSaved = await supabase.storage.from('data_setes').upload(`${name}_[cvs].json`, textFile, {
+    const fileSaved = await supabase.storage.from('data_sets').upload(`${name}_cvs.json`, textFile, {
         contentType: 'application/json'
     });
 
     if (fileSaved.data) {
-        const id = fileSaved.data.id
+        const path = fileSaved.data.path
         await supabase.from('datasets').insert({
-            id,
             name_file: name,
-            file_id: id,
-            user_id: userId
+            file_id: fileSaved.data.id,
+            user_id: userId,
+            id: fileSaved.data.id
         })
 
-        return encodedRedirect("success", "/studio", "File uploaded successfully")
+        return encodedRedirect("success", `/studio/1?file_path=${path}&file_id=${fileSaved.data.id}`, "File uploaded successfully")
     }
     if (fileSaved.error) {
         return encodedRedirect("error", "/studio", fileSaved.error.message)

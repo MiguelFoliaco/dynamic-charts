@@ -48,6 +48,7 @@ export type Database = {
           file_id: string
           id: string
           name_file: string
+          schema_id: number | null
           user_id: string | null
         }
         Insert: {
@@ -55,6 +56,7 @@ export type Database = {
           file_id: string
           id: string
           name_file: string
+          schema_id?: number | null
           user_id?: string | null
         }
         Update: {
@@ -62,7 +64,72 @@ export type Database = {
           file_id?: string
           id?: string
           name_file?: string
+          schema_id?: number | null
           user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "datasets_schema_id_fkey"
+            columns: ["schema_id"]
+            isOneToOne: false
+            referencedRelation: "schemas"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      properties: {
+        Row: {
+          column_name: string
+          column_type: string
+          created_at: string
+          id: number
+          schema_id: number
+        }
+        Insert: {
+          column_name?: string
+          column_type: string
+          created_at?: string
+          id?: number
+          schema_id: number
+        }
+        Update: {
+          column_name?: string
+          column_type?: string
+          created_at?: string
+          id?: number
+          schema_id?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "properties_schema_id_fkey"
+            columns: ["schema_id"]
+            isOneToOne: false
+            referencedRelation: "schemas"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schemas: {
+        Row: {
+          code: string
+          created_at: string
+          description: string
+          id: number
+          name_schema: string | null
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          description: string
+          id?: number
+          name_schema?: string | null
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          description?: string
+          id?: number
+          name_schema?: string | null
         }
         Relationships: []
       }

@@ -68,10 +68,47 @@
   }
 }
 
-body::-webkit-scrollbar{
+*::-webkit-scrollbar {
   background-color: white;
-  width:5px;
+  width: 5px;
 }
-body::-webkit-scrollbar-thumb{
+*::-webkit-scrollbar-thumb {
   background-color: #1e1e1e;
+}
+*::-webkit-scrollbar-corner{
+  background-color: #1e1e1e;
+}
+
+.table-with-scroll {
+  position: relative;
+  display: block;
+  margin: 10px;
+  gap: 10px;
+  height: 400px !important;
+  overflow-y: scroll;
+
+  thead {
+    background-color: #1e1e1e;
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
+  tbody{
+    tr{
+      border-bottom: 1px solid #5c5c5c;
+    }
+  }
+  tr:hover {
+    background-color: #eee;
+    td {
+      color: #1e1e1e;
+    }
+    th {
+      color: #0d0d0d;
+    }
+  }
+  th,
+  td {
+    padding: 15px;
+  }
 }

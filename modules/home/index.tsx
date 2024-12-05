@@ -34,6 +34,7 @@ import { Card } from '../charts/components/Cards';
 import { animations } from '@formkit/drag-and-drop';
 import SearchBar from './components/Search';
 import Link from 'next/link';
+import { BookIcon } from 'lucide-react';
 // Registro de todos los elementos, controladores, escalas y plugins
 ChartJS.register(
     ArcElement,
@@ -212,6 +213,12 @@ export const Home = () => {
                     className='py-1.5 px-3 size-2.5 hover:bg-blue-500'
                 >
                     <Link href={'/studio'}>Add report</Link>
+                </Button>
+            </div>
+            <div>
+                <Button className='flex gap-2'>
+                    <Link href={'/datasets'}>Data Sets </Link>
+                    <BookIcon />
                 </Button>
             </div>
             <div>

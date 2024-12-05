@@ -11,7 +11,6 @@ import { CustomAlert } from '@/components/alert';
 export default async function Page({ searchParams }: Readonly<Page<{}, Promise<{ readonly error?: string }>>>) {
     const params = await searchParams;
     const user = await validateSession()
-
     const updateCVS = uploadCVSAction.bind(null, user?.id)
 
     return (
