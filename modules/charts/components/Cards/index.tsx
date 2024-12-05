@@ -1,7 +1,7 @@
 import { ChartData, ChartType } from 'chart.js'
 import { Grip } from 'lucide-react';
 import React from 'react'
-import { Bar, Bubble, Doughnut, Line, Pie, PolarArea, Radar, Scatter } from 'react-chartjs-2'
+import { Components } from '../Charts';
 
 // ChartData<"doughnut", number[], unknown>
 interface Props {
@@ -11,16 +11,7 @@ interface Props {
     readonly title: string;
 }
 
-const Components: Record<ChartType, (props: any) => JSX.Element> = {
-    'doughnut': Doughnut,
-    'line': Line,
-    'bar': Bar,
-    'bubble': Bubble,
-    pie: Pie,
-    polarArea: PolarArea,
-    radar: Radar,
-    scatter: Scatter
-}
+
 
 export function Card({ config, type, title, long = 1 }: Props) {
 

@@ -12,3 +12,13 @@ export const getFileData = async (id: string) => {
     }
     return null;
 }
+
+export const getSchema = async (id: number) => {
+    const client = await createClient()
+    const list = await client.from('schemas').select('* , properties(*)').eq('id', id);
+    console.log(list)
+    if (list.data) {
+        return list.data[0];
+    }
+    return null;
+}

@@ -22,15 +22,24 @@ export function CustomAlert({ title, message, severity }: CustomAlertProps) {
   const { icon: Icon, variant } = severityConfig[severity]
 
   return (
-    <Alert 
-      variant={variant as "default" | "destructive"} 
+    <Alert
+      variant={variant as "default" | "destructive"}
       className={cn(
         severity === 'success' && "border-green-500 text-green-700 dark:border-green-400 dark:text-green-300",
         severity === 'info' && "border-blue-500 text-blue-700 dark:border-blue-400 dark:text-blue-300",
         severity === 'warning' && "border-yellow-500 text-yellow-700 dark:border-yellow-400 dark:text-yellow-300"
       )}
     >
-      <Icon className="h-4 w-4" />
+      <Icon className={
+        `h-4 w-4
+      ${cn(
+          severity === 'success' && "border-green-500 text-green-700 dark:border-green-400 dark:text-green-300",
+          severity === 'info' && "border-blue-500 text-blue-700 dark:border-blue-400 dark:text-blue-300",
+          severity === 'warning' && "border-yellow-500 text-yellow-700 dark:border-yellow-400 dark:text-yellow-300"
+        )
+        }
+        `
+      } />
       <AlertTitle>{title}</AlertTitle>
       <AlertDescription>{message}</AlertDescription>
     </Alert>
